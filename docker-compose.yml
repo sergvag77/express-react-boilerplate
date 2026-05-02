@@ -7,29 +7,29 @@ services:
       volumes:
         - mysql_data:/var/lib/mysql
 
-  backend:
-    build: .
-    environment:
-      # Application
-    - APP_PORT=3000
-    -    APP_HOST=0.0.0.0
-        # Environment
-    -    NODE_ENV = development
-        # Database
-    -    DB_CLIENT=mysql
-    -    DB_HOST=db
-    -    DB_USER=root
-    -    DB_PASSWORD=example
-    -    DB_NAME=mydb
-    -    DB_PORT=3306
-        # Mysql socket path /path/to/mysql.sock (leave empty to use default)
-    # -    SOCKET_PATH=<YOUR_SOCKET_PATH>
-        # Log
-    -    LOG_DIR=logs
-    -    LOG_LEVEL='debug'
-    -    TOKEN_SECRET_KEY=secretkeyforjsonwebtoken
-    depends_on:
-      - db
+    backend:
+      build: .
+      environment:
+        # Application
+      - APP_PORT=3000
+      -    APP_HOST=0.0.0.0
+          # Environment
+      -    NODE_ENV = development
+          # Database
+      -    DB_CLIENT=mysql
+      -    DB_HOST=db
+      -    DB_USER=root
+      -    DB_PASSWORD=example
+      -    DB_NAME=mydb
+      -    DB_PORT=3306
+          # Mysql socket path /path/to/mysql.sock (leave empty to use default)
+      # -    SOCKET_PATH=<YOUR_SOCKET_PATH>
+          # Log
+      -    LOG_DIR=logs
+      -    LOG_LEVEL='debug'
+      -    TOKEN_SECRET_KEY=secretkeyforjsonwebtoken
+      depends_on:
+        - db
     # volumes:
     #   - ./backend/app:/app
 
