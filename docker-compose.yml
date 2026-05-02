@@ -1,12 +1,12 @@
 services:
   services:
-  db:
-    image: mysql
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: example
-    volumes:
-      - mysql_data:/var/lib/mysql
+    db:
+      image: mysql
+      restart: always
+      environment:
+        MYSQL_ROOT_PASSWORD: example
+      volumes:
+        - mysql_data:/var/lib/mysql
 
   # backend:
   #   build: .
